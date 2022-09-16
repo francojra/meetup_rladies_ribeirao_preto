@@ -34,7 +34,7 @@ ggplot(diamante, aes(x = profundidade, fill = transparencia)) +
 
 ggplot(diamante, aes(x = cor, y = preco)) +
   geom_boxplot(outlier.shape = NA) +
-  stat_summary(fun = "mean", geom = "point", size = 3)
+  stat_summary(fun = "mean", geom = "point", size = 3) 
 
 ggplot(diamante, aes(x = cor, y = preco)) +
   geom_jitter(alpha = 0.2) +
@@ -108,7 +108,7 @@ ggplot(diamante3, aes(x = transparencia, y = media,
   geom_point() +
   geom_line() +
   scale_color_viridis(discrete = T, 
-                      labels = c("ncv", "djn", "jvn",
-                                 "jvn", "dvnk")) +
+                      labels = c("FAIR", "GOOD", "VERY GOOD",
+                                 "PREMIUM", "IDEAL")) +
   labs(x = "Transparência", y = "Preço média (US dollars",
        col = "Tipo de corte")
