@@ -42,8 +42,9 @@
 
 # Carregar pacotes -------------------------------------------------------------------------------------------------------------------------
 
-library(tidyverse)
-library(cols4all)
+library(tidyverse) # ggplot2, dplyr, tidyr (manipula os NAs), forcats
+library(cols4all) # paleta de cores
+c4a_gui()
 
 # Carregar dados ---------------------------------------------------------------------------------------------------------------------------
 
@@ -126,9 +127,10 @@ ggplot(vacina_cob2, aes(x = fct_reorder(Entity, media), y = media)) +
   geom_label(aes(label = n), size = 3, col = "black", fill = "gray")
 
 ggplot(vacina_cob2, aes(x = fct_reorder(Entity, media), y = media)) +
-  geom_col() +
+  geom_col() + 
   geom_errorbar(aes(ymin = media - se, ymax = media + se),
-                width = 0.3, size = 0.8)
+                width = 0.3, size = 0.8) +
+  theme_bw()
 
 c4a_gui()
 c4a("br_bg", 11)
